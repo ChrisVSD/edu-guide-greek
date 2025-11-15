@@ -7,16 +7,13 @@
 <style>
   body { font-family: Arial, sans-serif; background: #f9f9f9; color: #333; margin: 20px; }
   h1 { color: #2c3e50; }
-  h2 { margin-top: 1.5em; }
   details { margin-bottom: 10px; background: #fff; padding: 10px 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
   summary { font-weight: bold; cursor: pointer; }
-  a { color: #2980b9; text-decoration: none; }
-  a:hover { text-decoration: underline; }
   ul { list-style: none; padding-left: 20px; }
   li { margin: 5px 0; }
-  #content { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-top: 20px; }
-  pre { background: #f4f4f4; padding: 10px; overflow-x: auto; }
-  code { background: #f4f4f4; padding: 2px 5px; border-radius: 4px; }
+  a { color: #2980b9; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  #content > div { display: none; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-top: 20px; }
 </style>
 </head>
 <body>
@@ -24,94 +21,135 @@
 <h1>Edu Guide Greek</h1>
 <p>Εκπαιδευτικό βοήθημα για υποψήφιους Πανελλαδικών</p>
 
-<!-- Μαθηματικά -->
+<!-- Sections -->
 <details open>
   <summary>Μαθηματικά</summary>
   <ul>
-    <li><a href="#" data-file="Math/Algebra/Lessons.md">Άλγεβρα - Μαθήματα</a></li>
-    <li><a href="#" data-file="Math/Algebra/Exercises.md">Άλγεβρα - Ασκήσεις</a></li>
-    <li><a href="#" data-file="Math/Algebra/Solutions.md">Άλγεβρα - Λύσεις</a></li>
-    <li><a href="#" data-file="Math/Geometry/Lessons.md">Γεωμετρία - Μαθήματα</a></li>
-    <li><a href="#" data-file="Math/Geometry/Exercises.md">Γεωμετρία - Ασκήσεις</a></li>
-    <li><a href="#" data-file="Math/Geometry/Solutions.md">Γεωμετρία - Λύσεις</a></li>
+    <li><a href="#" onclick="showContent('AlgebraLessons')">Άλγεβρα - Μαθήματα</a></li>
+    <li><a href="#" onclick="showContent('AlgebraExercises')">Άλγεβρα - Ασκήσεις</a></li>
+    <li><a href="#" onclick="showContent('AlgebraSolutions')">Άλγεβρα - Λύσεις</a></li>
+    <li><a href="#" onclick="showContent('GeometryLessons')">Γεωμετρία - Μαθήματα</a></li>
+    <li><a href="#" onclick="showContent('GeometryExercises')">Γεωμετρία - Ασκήσεις</a></li>
+    <li><a href="#" onclick="showContent('GeometrySolutions')">Γεωμετρία - Λύσεις</a></li>
   </ul>
 </details>
 
-<!-- Θεωρητική Κατεύθυνση -->
 <details>
   <summary>Θεωρητική Κατεύθυνση</summary>
   <ul>
-    <li><a href="#" data-file="Courses/Theoritiki/Lessons.md">Μαθήματα</a></li>
-    <li><a href="#" data-file="Courses/Theoritiki/Exercises.md">Ασκήσεις</a></li>
-    <li><a href="#" data-file="Courses/Theoritiki/Solutions.md">Λύσεις</a></li>
+    <li><a href="#" onclick="showContent('TheoritikiLessons')">Μαθήματα</a></li>
+    <li><a href="#" onclick="showContent('TheoritikiExercises')">Ασκήσεις</a></li>
+    <li><a href="#" onclick="showContent('TheoritikiSolutions')">Λύσεις</a></li>
   </ul>
 </details>
 
-<!-- Θετική Κατεύθυνση -->
 <details>
   <summary>Θετική Κατεύθυνση</summary>
   <ul>
-    <li><a href="#" data-file="Courses/Thetiki/Lessons.md">Μαθήματα</a></li>
-    <li><a href="#" data-file="Courses/Thetiki/Exercises.md">Ασκήσεις</a></li>
-    <li><a href="#" data-file="Courses/Thetiki/Solutions.md">Λύσεις</a></li>
+    <li><a href="#" onclick="showContent('ThetikiLessons')">Μαθήματα</a></li>
+    <li><a href="#" onclick="showContent('ThetikiExercises')">Ασκήσεις</a></li>
+    <li><a href="#" onclick="showContent('ThetikiSolutions')">Λύσεις</a></li>
   </ul>
 </details>
 
-<!-- Τεχνολογική/Οικονομική Κατεύθυνση -->
 <details>
   <summary>Τεχνολογική/Οικονομική Κατεύθυνση</summary>
   <ul>
-    <li><a href="#" data-file="Courses/Texnologiki/Lessons.md">Μαθήματα</a></li>
-    <li><a href="#" data-file="Courses/Texnologiki/Exercises.md">Ασκήσεις</a></li>
-    <li><a href="#" data-file="Courses/Texnologiki/Solutions.md">Λύσεις</a></li>
+    <li><a href="#" onclick="showContent('TexnologikiLessons')">Μαθήματα</a></li>
+    <li><a href="#" onclick="showContent('TexnologikiExercises')">Ασκήσεις</a></li>
+    <li><a href="#" onclick="showContent('TexnologikiSolutions')">Λύσεις</a></li>
   </ul>
 </details>
 
-<!-- Tips & SOS -->
 <details>
   <summary>Tips & SOS</summary>
   <ul>
-    <li><a href="#" data-file="Tips/SOS.md">SOS & Συμβουλές</a></li>
-  </ul>
-</details>
-
-<!-- Πηγές -->
-<details>
-  <summary>Πηγές</summary>
-  <ul>
-    <li><a href="#" data-file="Resources.md">Resources.md</a></li>
+    <li><a href="#" onclick="showContent('SOS')">SOS & Συμβουλές</a></li>
   </ul>
 </details>
 
 <!-- Content display -->
 <div id="content">
-  <p>Κλικ σε ένα link για να δείτε το περιεχόμενο εδώ.</p>
+  <!-- Μαθηματικά -->
+  <div id="AlgebraLessons">
+    <h2>Άλγεβρα - Μαθήματα</h2>
+    <p>Εδώ μπαίνει η θεωρία της Άλγεβρας...</p>
+  </div>
+  <div id="AlgebraExercises">
+    <h2>Άλγεβρα - Ασκήσεις</h2>
+    <p>Εδώ μπαίνουν οι ασκήσεις της Άλγεβρας...</p>
+  </div>
+  <div id="AlgebraSolutions">
+    <h2>Άλγεβρα - Λύσεις</h2>
+    <p>Εδώ μπαίνουν οι λύσεις...</p>
+  </div>
+  <div id="GeometryLessons">
+    <h2>Γεωμετρία - Μαθήματα</h2>
+    <p>Εδώ μπαίνει η θεωρία της Γεωμετρίας...</p>
+  </div>
+  <div id="GeometryExercises">
+    <h2>Γεωμετρία - Ασκήσεις</h2>
+    <p>Εδώ μπαίνουν οι ασκήσεις της Γεωμετρίας...</p>
+  </div>
+  <div id="GeometrySolutions">
+    <h2>Γεωμετρία - Λύσεις</h2>
+    <p>Εδώ μπαίνουν οι λύσεις...</p>
+  </div>
+
+  <!-- Courses -->
+  <div id="TheoritikiLessons">
+    <h2>Θεωρητική Κατεύθυνση - Μαθήματα</h2>
+    <p>Εδώ μπαίνει το περιεχόμενο...</p>
+  </div>
+  <div id="TheoritikiExercises">
+    <h2>Θεωρητική Κατεύθυνση - Ασκήσεις</h2>
+    <p>Εδώ μπαίνουν οι ασκήσεις...</p>
+  </div>
+  <div id="TheoritikiSolutions">
+    <h2>Θεωρητική Κατεύθυνση - Λύσεις</h2>
+    <p>Εδώ μπαίνουν οι λύσεις...</p>
+  </div>
+
+  <div id="ThetikiLessons">
+    <h2>Θετική Κατεύθυνση - Μαθήματα</h2>
+    <p>Εδώ μπαίνει το περιεχόμενο...</p>
+  </div>
+  <div id="ThetikiExercises">
+    <h2>Θετική Κατεύθυνση - Ασκήσεις</h2>
+    <p>Εδώ μπαίνουν οι ασκήσεις...</p>
+  </div>
+  <div id="ThetikiSolutions">
+    <h2>Θετική Κατεύθυνση - Λύσεις</h2>
+    <p>Εδώ μπαίνουν οι λύσεις...</p>
+  </div>
+
+  <div id="TexnologikiLessons">
+    <h2>Τεχνολογική/Οικονομική Κατεύθυνση - Μαθήματα</h2>
+    <p>Εδώ μπαίνει το περιεχόμενο...</p>
+  </div>
+  <div id="TexnologikiExercises">
+    <h2>Τεχνολογική/Οικονομική Κατεύθυνση - Ασκήσεις</h2>
+    <p>Εδώ μπαίνουν οι ασκήσεις...</p>
+  </div>
+  <div id="TexnologikiSolutions">
+    <h2>Τεχνολογική/Οικονομική Κατεύθυνση - Λύσεις</h2>
+    <p>Εδώ μπαίνουν οι λύσεις...</p>
+  </div>
+
+  <!-- SOS -->
+  <div id="SOS">
+    <h2>SOS & Συμβουλές</h2>
+    <p>Εδώ μπαίνουν τα SOS tips...</p>
+  </div>
 </div>
 
-<!-- Marked.js for Markdown rendering -->
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script>
-const links = document.querySelectorAll('a[data-file]');
-const contentDiv = document.getElementById('content');
-
-links.forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    const file = link.dataset.file;
-    fetch(file)
-      .then(res => {
-        if(!res.ok) throw new Error("File not found");
-        return res.text();
-      })
-      .then(md => {
-        contentDiv.innerHTML = marked.parse(md);
-        window.scrollTo({ top: contentDiv.offsetTop, behavior: 'smooth' });
-      })
-      .catch(err => {
-        contentDiv.innerHTML = `<p style="color:red;">Δεν βρέθηκε το αρχείο: ${file}</p>`;
-      });
-  });
-});
+function showContent(id) {
+  const allDivs = document.querySelectorAll('#content > div');
+  allDivs.forEach(div => div.style.display = 'none');
+  const active = document.getElementById(id);
+  if(active) active.style.display = 'block';
+}
 </script>
 
 </body>
