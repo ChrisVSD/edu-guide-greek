@@ -1,3 +1,76 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edu Guide Greek</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #f9f9f9; color: #333; margin: 20px; }
+  h1 { color: #2c3e50; }
+  details { margin-bottom: 10px; background: #fff; padding: 10px 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+  summary { font-weight: bold; cursor: pointer; }
+  ul { list-style: none; padding-left: 20px; }
+  li { margin: 5px 0; }
+  a { color: #2980b9; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  #content > div { display: none; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<h1>Edu Guide Greek</h1>
+<p>Εκπαιδευτικό βοήθημα για υποψήφιους Πανελλαδικών</p>
+
+<!-- Sections -->
+<details open>
+  <summary>Μαθηματικά</summary>
+  <ul>
+    <li><a href="#" onclick="showContent('AlgebraLessons')">Άλγεβρα - Μαθήματα</a></li>
+    <li><a href="#" onclick="showContent('AlgebraExercises')">Άλγεβρα - Ασκήσεις</a></li>
+    <li><a href="#" onclick="showContent('AlgebraSolutions')">Άλγεβρα - Λύσεις</a></li>
+    <li><a href="#" onclick="showContent('GeometryLessons')">Γεωμετρία - Μαθήματα</a></li>
+    <li><a href="#" onclick="showContent('GeometryExercises')">Γεωμετρία - Ασκήσεις</a></li>
+    <li><a href="#" onclick="showContent('GeometrySolutions')">Γεωμετρία - Λύσεις</a></li>
+  </ul>
+</details>
+
+<details>
+  <summary>Θεωρητική Κατεύθυνση</summary>
+  <ul>
+    <li><a href="#" onclick="showContent('TheoritikiLessons')">Μαθήματα</a></li>
+    <li><a href="#" onclick="showContent('TheoritikiExercises')">Ασκήσεις</a></li>
+    <li><a href="#" onclick="showContent('TheoritikiSolutions')">Λύσεις</a></li>
+  </ul>
+</details>
+
+<details>
+  <summary>Θετική Κατεύθυνση</summary>
+  <ul>
+    <li><a href="#" onclick="showContent('ThetikiLessons')">Μαθήματα</a></li>
+    <li><a href="#" onclick="showContent('ThetikiExercises')">Ασκήσεις</a></li>
+    <li><a href="#" onclick="showContent('ThetikiSolutions')">Λύσεις</a></li>
+  </ul>
+</details>
+
+<details>
+  <summary>Τεχνολογική/Οικονομική Κατεύθυνση</summary>
+  <ul>
+    <li><a href="#" onclick="showContent('TexnologikiLessons')">Μαθήματα</a></li>
+    <li><a href="#" onclick="showContent('TexnologikiExercises')">Ασκήσεις</a></li>
+    <li><a href="#" onclick="showContent('TexnologikiSolutions')">Λύσεις</a></li>
+  </ul>
+</details>
+
+<details>
+  <summary>Tips & SOS</summary>
+  <ul>
+    <li><a href="#" onclick="showContent('SOS')">SOS & Συμβουλές</a></li>
+  </ul>
+</details>
+
+<!-- Content display -->
+<div id="content">
+
 <!-- Μαθηματικά -->
 <div id="AlgebraLessons">
   <h2>Άλγεβρα - Μαθήματα</h2>
@@ -176,3 +249,17 @@
     <li>Flowcharts & βασικοί αλγόριθμοι πληροφορικής</li>
   </ul>
 </div>
+
+</div> <!-- τέλος content -->
+
+<script>
+function showContent(id) {
+  const allDivs = document.querySelectorAll('#content > div');
+  allDivs.forEach(div => div.style.display = 'none');
+  const active = document.getElementById(id);
+  if(active) active.style.display = 'block';
+}
+</script>
+
+</body>
+</html>
